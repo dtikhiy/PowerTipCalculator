@@ -8,20 +8,26 @@
 
 /* Begin PBXBuildFile section */
 		22CB94851F33F7AA0027E03F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22CB94841F33F7AA0027E03F /* AppDelegate.swift */; };
-		22CB94871F33F7AA0027E03F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22CB94861F33F7AA0027E03F /* ViewController.swift */; };
+		22CB94871F33F7AA0027E03F /* PTCTipViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22CB94861F33F7AA0027E03F /* PTCTipViewController.swift */; };
 		22CB948A1F33F7AA0027E03F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22CB94881F33F7AA0027E03F /* Main.storyboard */; };
 		22CB948C1F33F7AA0027E03F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22CB948B1F33F7AA0027E03F /* Assets.xcassets */; };
 		22CB948F1F33F7AA0027E03F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22CB948D1F33F7AA0027E03F /* LaunchScreen.storyboard */; };
+		22CB949C1F33F9510027E03F /* Appearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22CB949B1F33F9510027E03F /* Appearance.swift */; };
+		22CB949E1F39877F0027E03F /* Formatting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22CB949D1F39877F0027E03F /* Formatting.swift */; };
+		22CB94A01F3992310027E03F /* PTCSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22CB949F1F3992310027E03F /* PTCSettingsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		22CB94811F33F7AA0027E03F /* PowerTipCalculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PowerTipCalculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		22CB94841F33F7AA0027E03F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		22CB94861F33F7AA0027E03F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		22CB94841F33F7AA0027E03F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = PowerTipCalculator/AppDelegate.swift; sourceTree = "<group>"; };
+		22CB94861F33F7AA0027E03F /* PTCTipViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTCTipViewController.swift; sourceTree = "<group>"; };
 		22CB94891F33F7AA0027E03F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		22CB948B1F33F7AA0027E03F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		22CB948B1F33F7AA0027E03F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = PowerTipCalculator/Assets.xcassets; sourceTree = "<group>"; };
 		22CB948E1F33F7AA0027E03F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		22CB94901F33F7AA0027E03F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		22CB94901F33F7AA0027E03F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = PowerTipCalculator/Info.plist; sourceTree = "<group>"; };
+		22CB949B1F33F9510027E03F /* Appearance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Appearance.swift; sourceTree = "<group>"; };
+		22CB949D1F39877F0027E03F /* Formatting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Formatting.swift; sourceTree = "<group>"; };
+		22CB949F1F3992310027E03F /* PTCSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PTCSettingsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +60,59 @@
 		22CB94831F33F7AA0027E03F /* PowerTipCalculator */ = {
 			isa = PBXGroup;
 			children = (
-				22CB94841F33F7AA0027E03F /* AppDelegate.swift */,
-				22CB94861F33F7AA0027E03F /* ViewController.swift */,
-				22CB94881F33F7AA0027E03F /* Main.storyboard */,
-				22CB948B1F33F7AA0027E03F /* Assets.xcassets */,
-				22CB948D1F33F7AA0027E03F /* LaunchScreen.storyboard */,
-				22CB94901F33F7AA0027E03F /* Info.plist */,
+				22CB94991F33F82C0027E03F /* Controllers */,
+				22CB94961F33F7B20027E03F /* Application */,
+				22CB94971F33F7EB0027E03F /* Resources */,
+				22CB949A1F33F9310027E03F /* Extensions */,
 			);
 			path = PowerTipCalculator;
+			sourceTree = "<group>";
+		};
+		22CB94961F33F7B20027E03F /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				22CB94841F33F7AA0027E03F /* AppDelegate.swift */,
+				22CB94901F33F7AA0027E03F /* Info.plist */,
+			);
+			name = Application;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		22CB94971F33F7EB0027E03F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				22CB94981F33F8120027E03F /* Storyboards */,
+				22CB948B1F33F7AA0027E03F /* Assets.xcassets */,
+				22CB948D1F33F7AA0027E03F /* LaunchScreen.storyboard */,
+			);
+			name = Resources;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		22CB94981F33F8120027E03F /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				22CB94881F33F7AA0027E03F /* Main.storyboard */,
+			);
+			name = Storyboards;
+			sourceTree = "<group>";
+		};
+		22CB94991F33F82C0027E03F /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				22CB94861F33F7AA0027E03F /* PTCTipViewController.swift */,
+				22CB949F1F3992310027E03F /* PTCSettingsViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		22CB949A1F33F9310027E03F /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				22CB949B1F33F9510027E03F /* Appearance.swift */,
+				22CB949D1F39877F0027E03F /* Formatting.swift */,
+			);
+			name = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,7 +188,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				22CB94871F33F7AA0027E03F /* ViewController.swift in Sources */,
+				22CB94871F33F7AA0027E03F /* PTCTipViewController.swift in Sources */,
+				22CB949C1F33F9510027E03F /* Appearance.swift in Sources */,
+				22CB949E1F39877F0027E03F /* Formatting.swift in Sources */,
+				22CB94A01F3992310027E03F /* PTCSettingsViewController.swift in Sources */,
 				22CB94851F33F7AA0027E03F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -151,6 +205,7 @@
 				22CB94891F33F7AA0027E03F /* Base */,
 			);
 			name = Main.storyboard;
+			path = PowerTipCalculator;
 			sourceTree = "<group>";
 		};
 		22CB948D1F33F7AA0027E03F /* LaunchScreen.storyboard */ = {
@@ -159,6 +214,7 @@
 				22CB948E1F33F7AA0027E03F /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			path = PowerTipCalculator;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
