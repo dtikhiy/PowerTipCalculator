@@ -8,7 +8,7 @@
 
 import Foundation
 
-extension Float {
+extension Double {
     var dollarFormatting: String {
         let formatter = NumberFormatter()
         formatter.numberStyle = .currency
