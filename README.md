@@ -10,8 +10,8 @@ Time spent: **X** hours spent in total
 
 The following **required** functionality is complete:
 
-* [ ✅ ] User can enter a bill amount, choose a tip percentage, and see the tip and total values.
-* [ ✅ ] Settings page to change the default tip percentage.
+* ✅ User can enter a bill amount, choose a tip percentage, and see the tip and total values.
+* ✅ Settings page to change the default tip percentage.
 
 The following **optional** features are implemented:
 * [ ] UI animations
@@ -46,7 +46,7 @@ Question 2: "Swift uses [Automatic Reference Counting](https://developer.apple.c
 
 ## License
 
-    Copyright [yyyy] [name of copyright owner]
+    Copyright 2017 Dmytro Tykhyi
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
