@@ -12,10 +12,21 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    let defaults = UserDefaults.standard
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        // UI Appearance customisations
         Appearance.setGlobalAppearance()
+        
+        // Set default values for the first start of the application
+        if !defaults.bool(forKey: Constants.kCustomPropertiesSetFlag) {
+            defaults.set(true, forKey: Constants.kCustomPropertiesSetFlag)
+            defaults.set(15, forKey: Constants.kFirstSegmentIDForDefaults)
+            defaults.set(20, forKey: Constants.kSecondSegmentIDForDefaults)
+            defaults.set(25, forKey: Constants.kThirdSegmentIDForDefaults)
+            defaults.set("", forKey: Constants.kBillAmountKeyForDefaults)
+            defaults.synchronize()
+        }
         return true
     }
 

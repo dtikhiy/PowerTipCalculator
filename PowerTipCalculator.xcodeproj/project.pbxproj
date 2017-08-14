@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		22A9DA3B1F412B7A00CD3991 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A9DA3A1F412B7A00CD3991 /* Helpers.swift */; };
 		22CB94851F33F7AA0027E03F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22CB94841F33F7AA0027E03F /* AppDelegate.swift */; };
 		22CB94871F33F7AA0027E03F /* PTCTipViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22CB94861F33F7AA0027E03F /* PTCTipViewController.swift */; };
 		22CB948A1F33F7AA0027E03F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22CB94881F33F7AA0027E03F /* Main.storyboard */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		22A9DA3A1F412B7A00CD3991 /* Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		22CB94811F33F7AA0027E03F /* PowerTipCalculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PowerTipCalculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		22CB94841F33F7AA0027E03F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = PowerTipCalculator/AppDelegate.swift; sourceTree = "<group>"; };
 		22CB94861F33F7AA0027E03F /* PTCTipViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTCTipViewController.swift; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 			children = (
 				22CB949B1F33F9510027E03F /* Appearance.swift */,
 				22CB949D1F39877F0027E03F /* Formatting.swift */,
+				22A9DA3A1F412B7A00CD3991 /* Helpers.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -189,6 +192,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				22CB94871F33F7AA0027E03F /* PTCTipViewController.swift in Sources */,
+				22A9DA3B1F412B7A00CD3991 /* Helpers.swift in Sources */,
 				22CB949C1F33F9510027E03F /* Appearance.swift in Sources */,
 				22CB949E1F39877F0027E03F /* Formatting.swift in Sources */,
 				22CB94A01F3992310027E03F /* PTCSettingsViewController.swift in Sources */,
@@ -358,6 +362,7 @@
 				22CB94951F33F7AA0027E03F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
