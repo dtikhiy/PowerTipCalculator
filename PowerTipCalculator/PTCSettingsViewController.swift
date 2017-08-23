@@ -26,14 +26,16 @@ class PTCSettingsViewController: UITableViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
+        let maxIndexOfSegments = self.percentageSegmentedControl.numberOfSegments - 1
         
-        for i in 0...2 {
+        for i in 0...maxIndexOfSegments  {
             var percent = self.percentageSegmentedControl.titleForSegment(at: i)!
             percent.characters.removeLast(1)
             defaults.set(percent, forKey: String.init(format: "segment%d", i))
         }
     }
     
+    // MARK: Change Percentage methods
     @IBAction func defaultChanged(_ sender: Any) {
         let index = self.percentageSegmentedControl.selectedSegmentIndex
         self.changePercentStepper.value =  NSString(string:percentageSegmentedControl.titleForSegment(at: index)!).doubleValue
@@ -44,5 +46,9 @@ class PTCSettingsViewController: UITableViewController {
     
     @IBAction func stepperValueChanged(_ sender: Any) {
         self.percentageSegmentedControl.setTitle(Int.init(self.changePercentStepper.value).description + "%", forSegmentAt: self.percentageSegmentedControl.selectedSegmentIndex)
+        
+        // isPercentageChanged set to true to show the popup message
+        let tipController = navigationController?.viewControllers.first as? PTCTipViewController
+        tipController?.isPercentageChanged = true
     }
 }

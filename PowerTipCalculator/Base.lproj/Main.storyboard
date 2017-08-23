@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="g4F-3T-k6h">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="g4F-3T-k6h">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -25,7 +25,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="4Zr-PZ-Z9i">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="$" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Abx-8M-eHu">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="$" textAlignment="right" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Abx-8M-eHu">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="150" id="ckf-Nb-ZLG"/>
@@ -118,13 +118,38 @@
                                     <constraint firstItem="UYh-WP-IJf" firstAttribute="leading" secondItem="4Zr-PZ-Z9i" secondAttribute="leading" constant="8" id="ki7-fJ-pGq"/>
                                 </constraints>
                             </stackView>
+                            <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zJZ-Tg-vvu">
+                                <rect key="frame" x="21" y="205" width="332" height="128"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PERCENTAGE CHANGED" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cf5-N0-YCi">
+                                        <rect key="frame" x="55" y="34" width="221" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="221" id="8zt-fT-Yda"/>
+                                            <constraint firstAttribute="height" constant="60" id="aZ3-mp-jTY"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                        <color key="textColor" red="0.072237646968980662" green="0.18818101085990932" blue="0.32141912376820136" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.4431372549" green="0.77647058820000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="U6e-wI-pmL"/>
+                                    <constraint firstItem="Cf5-N0-YCi" firstAttribute="centerY" secondItem="zJZ-Tg-vvu" secondAttribute="centerY" id="kp7-j0-FtY"/>
+                                    <constraint firstItem="Cf5-N0-YCi" firstAttribute="centerX" secondItem="zJZ-Tg-vvu" secondAttribute="centerX" id="zvD-9p-otJ"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.33056491613388062" green="0.78742843866348267" blue="0.98967427015304565" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="tintColor" red="0.4431372549" green="0.77647058820000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="4Zr-PZ-Z9i" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="21E-p4-i7F"/>
+                            <constraint firstItem="zJZ-Tg-vvu" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="EnM-zG-ftK"/>
+                            <constraint firstItem="zJZ-Tg-vvu" firstAttribute="top" secondItem="vda-CT-0a5" secondAttribute="top" id="H6l-Dj-9Ak"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="4Zr-PZ-Z9i" secondAttribute="bottom" id="Q1b-aa-6Sl"/>
+                            <constraint firstItem="zJZ-Tg-vvu" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="5.5" id="QdF-NO-Kyf"/>
                             <constraint firstItem="4Zr-PZ-Z9i" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="YxW-h2-GBs"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="zJZ-Tg-vvu" secondAttribute="trailing" constant="5.5" id="m8g-WI-PZ3"/>
                             <constraint firstItem="4Zr-PZ-Z9i" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="o82-3J-MPM"/>
                             <constraint firstItem="4Zr-PZ-Z9i" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="re9-cP-YZR"/>
                         </constraints>
@@ -139,6 +164,7 @@
                     <connections>
                         <outlet property="billAmountTextField" destination="Abx-8M-eHu" id="SE0-O5-yvI"/>
                         <outlet property="mainStackViewBottomConstraint" destination="Q1b-aa-6Sl" id="GUe-2r-uie"/>
+                        <outlet property="percentageChangedAlertView" destination="zJZ-Tg-vvu" id="pzH-E4-FOn"/>
                         <outlet property="tipsLabel" destination="m7I-oO-l8O" id="msR-Ao-bsB"/>
                         <outlet property="tipsSegmentedControl" destination="UYh-WP-IJf" id="6Sj-H4-iR2"/>
                         <outlet property="totalLabel" destination="PC0-gP-6E6" id="A5h-Re-ep2"/>
@@ -264,7 +290,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="te6-HL-awJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1765.5999999999999" y="-546.47676161919048"/>
+            <point key="canvasLocation" x="1729" y="-546"/>
         </scene>
     </scenes>
     <resources>

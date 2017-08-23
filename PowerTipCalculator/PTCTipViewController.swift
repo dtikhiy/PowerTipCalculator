@@ -22,15 +22,21 @@ class PTCTipViewController: UIViewController {
     @IBOutlet weak var tipsSegmentedControl: UISegmentedControl!
     @IBOutlet weak var totalLabel: UILabel!
     @IBOutlet weak var tipsLabel: UILabel!
+    @IBOutlet weak var percentageChangedAlertView: UIView!
     
     @IBOutlet weak var mainStackViewBottomConstraint: NSLayoutConstraint!
     
     let defaults = UserDefaults.standard
+    var isPercentageChanged = false
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         self.setupView()
+        
+        if isPercentageChanged {
+            self.animatePercentageChangedView()
+        }
     }
     
     func setupView() {
@@ -46,6 +52,8 @@ class PTCTipViewController: UIViewController {
         self.self.tipsSegmentedControl.updateSegmentedControlFromDefaults()
         self.billAmountTextField.text = defaults.string(forKey: Constants.kBillAmountKeyForDefaults)
         self.billAmountChanged(self)
+        
+        self.percentageChangedAlertView.layer.cornerRadius = self.percentageChangedAlertView.frame.height / 8
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -63,7 +71,7 @@ class PTCTipViewController: UIViewController {
     }
 }
 
-// MARK: - Tips Calculations
+// MARK: - Tips Calculations & Animations
 extension PTCTipViewController {
     func calculateTips(operation:OperationType) -> Double {
         let billAmount = Double.init(billAmountTextField.text!)
@@ -81,6 +89,18 @@ extension PTCTipViewController {
         case .OperationTypeTotal:
             return Double(billAmount! * (1.0 + persent))
         }
+    }
+    
+    func animatePercentageChangedView() {
+        UIView.animate(withDuration: 0.9, delay: 0, options: .curveEaseOut, animations: {
+            self.percentageChangedAlertView.alpha = 0.8
+        }, completion: nil)
+        
+        UIView.animate(withDuration: 0.8, delay: 0.5, options: .curveEaseOut, animations: {
+            self.percentageChangedAlertView.alpha = 0.0
+        }, completion: nil)
+        
+        self.isPercentageChanged = false
     }
 }
 

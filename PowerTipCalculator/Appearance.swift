@@ -11,11 +11,13 @@ import UIKit
 
 struct Appearance {
     static func setGlobalAppearance() {
+        // MARK: UINavigationBar
         UINavigationBar.appearance().tintColor = .white
         UINavigationBar.appearance().barTintColor = .skyBlue
         UINavigationBar.appearance().isTranslucent = false
         UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
         
+        // MARK: UISegmentedControl
         UISegmentedControl.appearance().tintColor = .ocean
         let attributes = [NSForegroundColorAttributeName : UIColor.white]
         UISegmentedControl.appearance().setTitleTextAttributes(attributes, for:.normal)
