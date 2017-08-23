@@ -30,6 +30,7 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
+PowerTipCalculator Walkthrough & UI Animation Showcase
 <img src='http://i.imgur.com/bXfN4H8.gif' title='PowerTipCalculator Walkthrough' width='300' alt='PowerTipCalculator Walkthrough' />
 <img src='http://i.imgur.com/l9mmn8T.gif' title='Animation Showcase' width='300' alt='Animation Showcase' />
 
