@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 
 enum Constants {
+    // UserDefaults Keys Placeholders
     static let kBillAmountKeyForDefaults = "billAmount"
     static let kDefaultSegmentForDefaults = "defaultPercentage"
     static let kCustomPropertiesSetFlag = "isCustomPropertiesSet"

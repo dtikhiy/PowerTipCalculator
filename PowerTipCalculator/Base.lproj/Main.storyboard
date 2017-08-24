@@ -121,21 +121,22 @@
                             <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zJZ-Tg-vvu">
                                 <rect key="frame" x="21" y="205" width="332" height="128"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PERCENTAGE CHANGED" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cf5-N0-YCi">
-                                        <rect key="frame" x="55" y="34" width="221" height="60"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PERCENTAGE CHANGED" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cf5-N0-YCi">
+                                        <rect key="frame" x="15" y="34" width="302" height="60"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="221" id="8zt-fT-Yda"/>
                                             <constraint firstAttribute="height" constant="60" id="aZ3-mp-jTY"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="19"/>
                                         <color key="textColor" red="0.072237646968980662" green="0.18818101085990932" blue="0.32141912376820136" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.4431372549" green="0.77647058820000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Cf5-N0-YCi" secondAttribute="trailing" constant="15" id="0wd-T1-G7C"/>
                                     <constraint firstAttribute="height" constant="128" id="U6e-wI-pmL"/>
                                     <constraint firstItem="Cf5-N0-YCi" firstAttribute="centerY" secondItem="zJZ-Tg-vvu" secondAttribute="centerY" id="kp7-j0-FtY"/>
+                                    <constraint firstItem="Cf5-N0-YCi" firstAttribute="leading" secondItem="zJZ-Tg-vvu" secondAttribute="leading" constant="15" id="zTD-Ks-zvi"/>
                                     <constraint firstItem="Cf5-N0-YCi" firstAttribute="centerX" secondItem="zJZ-Tg-vvu" secondAttribute="centerX" id="zvD-9p-otJ"/>
                                 </constraints>
                             </view>
@@ -163,6 +164,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="billAmountTextField" destination="Abx-8M-eHu" id="SE0-O5-yvI"/>
+                        <outlet property="changedAlertLabel" destination="Cf5-N0-YCi" id="i76-Sl-v63"/>
                         <outlet property="mainStackViewBottomConstraint" destination="Q1b-aa-6Sl" id="GUe-2r-uie"/>
                         <outlet property="percentageChangedAlertView" destination="zJZ-Tg-vvu" id="pzH-E4-FOn"/>
                         <outlet property="tipsLabel" destination="m7I-oO-l8O" id="msR-Ao-bsB"/>

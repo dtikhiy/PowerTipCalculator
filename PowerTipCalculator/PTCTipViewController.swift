@@ -14,6 +14,11 @@ enum OperationType: Int {
     case OperationTypeTotal
 }
 
+enum AtertMessageType: String {
+    case AtertMessageTypeDefaultValueChanged = "DEFAULT TIP CHANGED"
+    case AtertMessageTypePercentageUpdated = "PERCENTAGES UPDATED"
+}
+
 let kMaxNumberOfDigits = 10
 
 class PTCTipViewController: UIViewController {
@@ -23,19 +28,22 @@ class PTCTipViewController: UIViewController {
     @IBOutlet weak var totalLabel: UILabel!
     @IBOutlet weak var tipsLabel: UILabel!
     @IBOutlet weak var percentageChangedAlertView: UIView!
+    @IBOutlet weak var changedAlertLabel: UILabel!
+    
     
     @IBOutlet weak var mainStackViewBottomConstraint: NSLayoutConstraint!
     
     let defaults = UserDefaults.standard
-    var isPercentageChanged = false
+    var isSettingsChanged = false
+    var alertMessageTextType: AtertMessageType = .AtertMessageTypeDefaultValueChanged
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         self.setupView()
         
-        if isPercentageChanged {
-            self.animatePercentageChangedView()
+        if isSettingsChanged {
+            self.animatePercentageChangedView(type: alertMessageTextType)
         }
     }
     
@@ -91,16 +99,18 @@ extension PTCTipViewController {
         }
     }
     
-    func animatePercentageChangedView() {
+    func animatePercentageChangedView(type: AtertMessageType) {
+        self.changedAlertLabel.text = type.rawValue
+        
         UIView.animate(withDuration: 0.9, delay: 0, options: .curveEaseOut, animations: {
             self.percentageChangedAlertView.alpha = 0.8
         }, completion: nil)
         
-        UIView.animate(withDuration: 0.8, delay: 0.5, options: .curveEaseOut, animations: {
+        UIView.animate(withDuration: 0.8, delay: 1, options: .curveEaseOut, animations: {
             self.percentageChangedAlertView.alpha = 0.0
         }, completion: nil)
         
-        self.isPercentageChanged = false
+        self.isSettingsChanged = false
     }
 }
 
