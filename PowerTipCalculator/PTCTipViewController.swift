@@ -20,6 +20,8 @@ enum AtertMessageType: String {
 }
 
 let kMaxNumberOfDigits = 10
+let kAlertViewHeight = CGFloat(40)
+let kAlertLabelHeight = CGFloat(20)
 
 class PTCTipViewController: UIViewController {
 
@@ -30,8 +32,8 @@ class PTCTipViewController: UIViewController {
     @IBOutlet weak var percentageChangedAlertView: UIView!
     @IBOutlet weak var changedAlertLabel: UILabel!
     
-    
-    @IBOutlet weak var mainStackViewBottomConstraint: NSLayoutConstraint!
+    @IBOutlet weak var changedAlertLabelHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var percentageChangedAlertViewHeightConstraint: NSLayoutConstraint!
     
     let defaults = UserDefaults.standard
     var isSettingsChanged = false
@@ -60,8 +62,6 @@ class PTCTipViewController: UIViewController {
         self.self.tipsSegmentedControl.updateSegmentedControlFromDefaults()
         self.billAmountTextField.text = defaults.string(forKey: Constants.kBillAmountKeyForDefaults)
         self.billAmountChanged(self)
-        
-        self.percentageChangedAlertView.layer.cornerRadius = self.percentageChangedAlertView.frame.height / 8
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -103,12 +103,21 @@ extension PTCTipViewController {
         self.changedAlertLabel.text = type.rawValue
         
         UIView.animate(withDuration: 0.9, delay: 0, options: .curveEaseOut, animations: {
-            self.percentageChangedAlertView.alpha = 0.8
+            self.percentageChangedAlertView.alpha = 1.0
+            self.changedAlertLabelHeightConstraint.constant = kAlertLabelHeight
+            self.percentageChangedAlertViewHeightConstraint.constant = kAlertViewHeight
+            self.percentageChangedAlertView.layoutIfNeeded()
         }, completion: nil)
         
         UIView.animate(withDuration: 0.8, delay: 1, options: .curveEaseOut, animations: {
             self.percentageChangedAlertView.alpha = 0.0
-        }, completion: nil)
+        }, completion: { (finished: Bool) in
+            UIView.animate(withDuration: 0.2, animations: {
+                self.changedAlertLabelHeightConstraint.constant = 0.0
+                self.percentageChangedAlertViewHeightConstraint.constant = 0.0
+                self.view.layoutIfNeeded()
+            })
+        })
         
         self.isSettingsChanged = false
     }
