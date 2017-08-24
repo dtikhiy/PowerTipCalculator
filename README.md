@@ -38,7 +38,7 @@ PowerTipCalculator Walkthrough & UI Animation Showcase
   </figure>
 
   <figure>
-  <img src='http://i.imgur.com/l9mmn8T.gif' title='Animation Showcase' width='300' alt='Animation Showcase' />
+  <img src='http://i.imgur.com/orHwdHc.gif' title='Animation Showcase' width='300' alt='Animation Showcase' />
   </figure>
 </div>
 
